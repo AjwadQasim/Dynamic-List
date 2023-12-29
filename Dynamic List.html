@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+</head>
+<body>
+<fieldset>    
+ <input type="text" placeholder="UserName" id="name"><br><br>
+ <input type="text" placeholder="Email or Phone" id="email"><br><br>
+ <input type="text" placeholder="Password" id="password"><br><br>
+ <button onclick="DynamicList()" id="btn">Get Data</button>    
+</fieldset>
+<style>
+fieldset{
+   width: 200px; 
+   border-radius: 5px;
+}
+#btn{
+    margin-left: 130px;
+}    
+</style> 
+<script>
+function DynamicList()
+{
+var UserName = document.getElementById("name").value
+var Email = document.getElementById("email").value    
+var Password = document.getElementById("password").value
+var button = document.getElementById("btn")
+
+var createOL = document.createElement("ol")  
+
+var list1 = document.createElement("li")
+list1.appendChild(document.createTextNode(UserName))
+createOL.appendChild(list1)
+
+var list2 = document.createElement("li")
+list2.appendChild(document.createTextNode(Email))
+createOL.appendChild(list2)
+
+var list3 = document.createElement("li")
+list3.appendChild(document.createTextNode(Password))
+createOL.appendChild(list3)
+document.body.appendChild(createOL)  
+}
+</script>
+</body>
+</html>
